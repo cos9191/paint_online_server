@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Start Server
+        run: npm run start
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
