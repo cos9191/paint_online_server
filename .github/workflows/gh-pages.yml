@@ -27,9 +27,12 @@ jobs:
       - name: Start Server
         run: npm run start
 
-#      - name: Deploy
-#        uses: JamesIves/github-pages-deploy-action@v4
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          folder: /
-#          branch: master
+      - name: Wait for Server
+        run: sleep 10
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          folder: /
+          branch: master
