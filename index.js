@@ -43,6 +43,16 @@ app.get('/image', (req, res) => {
         return res.status(500).json(`${err}`)
     }
 })
+app.get('/', (req, res) => {
+    try {
+        res.end(`
+        <p>Paint server is running...</p>
+        `)
+    } catch (err) {
+        console.log(err)
+        return res.status(500).json(`${err}`)
+    }
+})
 app.listen(PORT, () => console.log(`server started on PORT ${PORT}`))
 const connectionHandler = (ws, message) => {
     ws.id = message.id
